@@ -1,0 +1,48 @@
+@use "../utils" as *;
+
+.btn {
+  &__header {
+    & a {
+      background-color: var(--primary-color);
+      padding: 15px 28px;
+      display: inline-block;
+      color: #fff;
+      font-size: 18px;
+      border-radius: 5px;
+      transition: 0.3s;
+      @media #{$xl} {
+        padding: 10px 20px;
+        font-size: 16px;
+      }
+      @media #{$lg} {
+        padding: 10px 15px;
+        font-size: 14px;
+      }
+      @media #{$md} {
+        padding: 7px 6px;
+        font-size: 12px;
+      }
+      @media #{$xs} {
+        display: none;
+      }
+      &:hover {
+        background-color: black;
+        color: #fff;
+      }
+    }
+  }
+}
+
+.primary-btn {
+  background-color: var(--primary-color);
+  padding: 15px 50px;
+  display: inline-block;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 5px;
+  transition: 0.3s;
+  &:hover {
+    background-color: black;
+    color: #fff;
+  }
+}

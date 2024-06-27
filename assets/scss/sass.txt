@@ -1,0 +1,1 @@
+sass --watch "D:\Web Development\Practice Project\Themeforest\travel\assets\scss\main.scss":"D:\Web Development\Practice Project\Themeforest\travel\assets\css\style.css"

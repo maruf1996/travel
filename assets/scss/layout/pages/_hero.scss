@@ -1,0 +1,101 @@
+@use "../../utils" as *;
+
+.hero {
+  &__area {
+    background: url("../img/hero-1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 330px 0 180px 0;
+    margin-top: -120px;
+    position: relative;
+    overflow: hidden;
+  }
+  &__content {
+    max-width: 850px;
+  }
+  &__title {
+    max-width: 630px;
+    margin-bottom: 50px;
+    & h1 {
+      font-size: 59px;
+      font-weight: 700;
+      color: #fff;
+      font-family: var(--poppins-fonts);
+    }
+  }
+  &__form {
+    padding: 10px 0;
+    background: rgba(243, 243, 243, 0.6);
+    border-radius: 5px;
+  }
+  &__input__group {
+    display: flex;
+    align-items: center;
+  }
+  &__where__input {
+    width: 25%;
+    & input {
+      border: 0;
+      outline: 0;
+      background: transparent;
+      font-size: 19px;
+      color: #fff;
+      font-weight: 500;
+    }
+    input::placeholder {
+      color: #fff;
+      font-size: 19px;
+    }
+  }
+  &__travel__select,
+  &__duration__select {
+    width: 25%;
+    position: relative;
+    padding-left: 50px;
+    select {
+      border: 0;
+      outline: 0;
+      height: 56px;
+      background: transparent;
+      font-size: 19px;
+      color: #fff;
+      font-weight: 500;
+      appearance: none;
+      padding-left: 10px;
+      & option {
+        background-color: #fff;
+        color: black;
+        font-size: 16px;
+      }
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      height: 50%;
+      width: 2px;
+      bottom: 14px;
+      background-color: #fff;
+      transition: 0.3s;
+      left: 0;
+    }
+  }
+  &__btn {
+    width: 25%;
+    padding: 0 15px;
+    text-align: right;
+  }
+  &__bottom {
+    margin-top: 30px;
+    display: flex;
+    & p {
+      color: #fff;
+      margin-left: 20px;
+      padding-top: 8px;
+    }
+  }
+  &__avatar-group {
+    & img + img {
+      margin-left: -15px;
+    }
+  }
+}

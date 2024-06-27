@@ -1,0 +1,119 @@
+@use "../../utils" as *;
+
+// Header Area Start
+.header-area {
+  padding-left: 15px;
+  padding-right: 15px;
+  @media #{$lg} {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  @media #{$md} {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  position: relative;
+  z-index: 10;
+}
+
+.header-area .nav-wrapper ul li {
+  display: inline-block;
+  position: relative;
+  & a {
+    color: #fff;
+    display: inline-block;
+    padding: 15px 35px;
+    font-weight: 500;
+    font-size: 16px;
+    position: relative;
+    display: inline-block;
+    @media #{$md} {
+      padding: 10px 11px;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      height: 2px;
+      bottom: 12px;
+      background-color: var(--primary-color);
+      transition: 0.3s;
+      width: 40%;
+      left: 0;
+      opacity: 0;
+    }
+  }
+  &:hover {
+    & a::before {
+      opacity: 1;
+      left: 32%;
+    }
+  }
+  & ul {
+    position: absolute;
+    top: calc(100% + 15px);
+    left: 0;
+    min-width: 200px;
+    background: rgba(217, 217, 217, 0.34);
+    border-radius: 16px;
+    padding: 10px 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    & li {
+      display: block;
+      text-align: left;
+      & a {
+        padding: 8px 15px;
+        color: #fff;
+        display: block;
+        font-size: 14px;
+        &::before {
+          display: none;
+        }
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+  &:hover {
+    & ul {
+      opacity: 1;
+      visibility: visible;
+      top: calc(100% + 5px);
+    }
+    &.sub-menu ::after {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  &.sub-menu {
+    & a::after {
+      position: absolute;
+      right: 18px;
+      top: 15px;
+      content: "\f107";
+      font-family: "Font Awesome 5 Pro";
+      transition: 0.3s;
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}
+
+.header-area .btn-group {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.header-area .mobile-menu {
+  border: 0;
+  background-color: transparent;
+  font-size: 25px;
+  margin-left: 15px;
+  display: none;
+  @media #{$xs} {
+    display: inline-block;
+  }
+}
